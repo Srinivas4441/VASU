@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Age Calculator</h1>
+<form action="{{ url_for('calculate') }}" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+    <button type="submit">Calculate Age</button>
+</form>
+{% if name %}
+<p>{{ name }}, you are {{ age_years }} years, {{ age_months }} months, {{ age_days }} days, {{ age_hours }} hours, {{ age_minutes }} minutes, and {{ age_seconds }} seconds old.</p>
+{% endif %}
+{% endblock %}
